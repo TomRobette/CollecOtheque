@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tomrobette.collecotheque">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".VueLivreActivity"></activity>
+        <activity
+            android:name=".AjoutBibActivity"
+            android:label="@string/ajout_bib_titre_nom"></activity>
+        <activity
+            android:name=".AjoutEtaActivity"
+            android:label="@string/ajout_eta_titre_nom"></activity>
+        <activity
+            android:name=".AjoutColActivity"
+            android:label="@string/ajout_col_titre_nom"></activity>
+        <activity
+            android:name=".AjoutLivActivity"
+            android:label="@string/ajout_liv_titre_nom"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListEtaActivity"
+            android:label="@string/ajout_eta_titre_nom"></activity>
+        <activity
+            android:name=".ListColActivity"
+            android:label="@string/ajout_col_titre_nom"></activity>
+        <activity
+            android:name=".ListLivActivity"
+            android:label="@string/ajout_liv_titre_nom"></activity>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+</manifest>

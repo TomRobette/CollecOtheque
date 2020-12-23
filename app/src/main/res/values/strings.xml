@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CollecOtheque</string>
+    <string name="ajout_bib_titre">Création de la bibliothèque</string>
+    <string name="ajout_bib_titre_nom">Le nom de votre bibliothèque</string>
+    <string name="ajout_bib_hint">Le nom de la bibliotheque</string>
+    <string name="ajout_eta_titre">Création de l\'étagère</string>
+    <string name="ajout_eta_titre_nom">Le nom de votre étagère</string>
+    <string name="ajout_eta_hint">Le nom de l\'étagère</string>
+    <string name="ajout_col_titre">Création de la collection</string>
+    <string name="ajout_col_titre_nom">Le nom de votre collection</string>
+    <string name="ajout_col_hint">Le nom de la collection</string>
+    <string name="ajout_liv_titre">Ajout du livre</string>
+    <string name="ajout_liv_titre_nom">L\'ISBN du livre</string>
+    <string name="ajout_liv_succes">Enregistré avec succès</string>
+    <string name="ajout_liv_erreur">L\'ISBN du livre ne correspond pas</string>
+    <string name="ajout_liv_demande">Est-ce bien ce livre ?</string>
+    <string name="ajout_liv_hint">L\'ISBN de 13 chiffres du livre</string>
+    <string name="nom">Nom</string>
+    <string name="valider">Valider</string>
+    <string name="tester">Tester</string>
+    <string name="recommencer">Recommencer</string>
+    <string name="liste_bib_ajout">Ajouter une bibliotheque</string>
+    <string name="liste_eta_ajout">Ajouter une étagère</string>
+    <string name="liste_col_ajout">Ajouter une collection</string>
+    <string name="liste_liv_ajout">Ajouter un livre</string>
+
+</resources>
