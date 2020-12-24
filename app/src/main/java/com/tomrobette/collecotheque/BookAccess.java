@@ -18,6 +18,7 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -132,10 +133,6 @@ public class BookAccess {
 
                             activity.findViewById(R.id.constraint).setVisibility(View.GONE);
                             activity.findViewById(R.id.scrollView2).setVisibility(View.VISIBLE);
-
-
-
-
                         }catch (Exception e){}
                     }
                 },
@@ -161,21 +158,24 @@ public class BookAccess {
                         Log.d("====OnResponse====", "Request JSON - Resultat on response : "+response.toString());
 
                         try {
-//                            activity.findViewById(R.id.card).setVisibility(View.VISIBLE);
-//                            // titre
-//                            ((TextView)activity.findViewById(R.id.card_tv_title)).setText(response.get("title").toString());
-//                            // isbn
-//                            String isbn = response.get("isbn_13").toString();
-//                            ((TextView)activity.findViewById(R.id.card_tv_isbn)).setText("n°ISBN: "+isbn.substring(1, isbn.length()-1));
-//                            // image
-//                            // utilisation de la librairie GLIDE
-//                            String cover=response.get("covers").toString();
-//                            cover=cover.substring(1, cover.length()-1);
-//                            String urlImg="https://covers.openlibrary.org/b/id/"+cover+"-L.jpg";
-//                            Glide.with(activity).load(urlImg).into((ImageView)activity.findViewById(R.id.card_iv_cover));
+                            ((TextView)activity.findViewById(R.id.card_tv_title)).setText(activity.getResources().getString(R.string.vue_liv_titre)+response.get("title").toString());
+                            ((TextView)activity.findViewById(R.id.card_tv_isbn)).setText(activity.getResources().getString(R.string.vue_liv_isbn)+response.get("isbn_13").toString());
+                            ((TextView)activity.findViewById(R.id.card_tv_pages)).setText(activity.getResources().getString(R.string.vue_liv_pages)+response.get("number_of_pages").toString());
+                            ((TextView)activity.findViewById(R.id.card_tv_date_pub)).setText(activity.getResources().getString(R.string.vue_liv_date_pub)+response.get("publish_date").toString());
+                            ((TextView)activity.findViewById(R.id.card_tv_editeur)).setText(activity.getResources().getString(R.string.vue_liv_editeur)+response.get("publishers").toString());
+                            ((TextView)activity.findViewById(R.id.card_tv_contri)).setText(activity.getResources().getString(R.string.vue_liv_contri));
+
+                            JSONArray jsonArray = response.getJSONArray("contributors");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject object = jsonArray.getJSONObject(i);
+                                VueLivreActivity.listContri.add(""+object.get("name")+", "+object.get("role"));
+                            }
 
 
-
+                            String cover=response.get("covers").toString();
+                            cover=cover.substring(1, cover.length()-1);
+                            String urlImg="https://covers.openlibrary.org/b/id/"+cover+"-L.jpg";
+                            Glide.with(activity).load(urlImg).into((ImageView)activity.findViewById(R.id.card_iv_cover));
 
                         }catch (Exception e){}
                     }
@@ -184,7 +184,6 @@ public class BookAccess {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.d("====OnError====", "Request JSON - Resultat du OnError : "+error.toString());
-
                     }
                 }
         );

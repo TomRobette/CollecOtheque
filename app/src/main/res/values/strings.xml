@@ -23,5 +23,11 @@
     <string name="liste_eta_ajout">Ajouter une étagère</string>
     <string name="liste_col_ajout">Ajouter une collection</string>
     <string name="liste_liv_ajout">Ajouter un livre</string>
+    <string name="vue_liv_titre">Titre : </string>
+    <string name="vue_liv_isbn">ISBN : </string>
+    <string name="vue_liv_pages">Nombre de pages : </string>
+    <string name="vue_liv_date_pub">Date de publication du modèle : </string>
+    <string name="vue_liv_editeur">Éditeur : </string>
+    <string name="vue_liv_contri">Contributeurs : </string>
 
 </resources>
